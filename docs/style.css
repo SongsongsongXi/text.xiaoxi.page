@@ -1,0 +1,755 @@
+:root {
+    --primary-color: #000000;
+    --accent-color: #555555;
+    --text-color: #1a1a1a;
+    --light-bg: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.15);
+    /* 澧炲姞閫忔槑搴︼紝浣跨嚎鏇存煍鍜?*/
+    --white: #ffffff;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+    /* 寮哄埗鐩磋 */
+    transition: none !important;
+    /* 绉婚櫎鎵€鏈夊姩鐢?*/
+    animation: none !important;
+    /* 绉婚櫎鎵€鏈夊姩鐢?*/
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Noto Serif SC', sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    background-color: var(--white);
+}
+
+h1,
+h2,
+h3,
+.journal-name {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0;
+    /* 閰嶅悎缃戞牸杈圭嚎 */
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+/* Header */
+.header {
+    background: var(--white);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-right: 1px solid var(--border-color);
+    padding: 0.75rem 2rem;
+    /* 绾枃瀛楁樉绀猴紝鎭㈠鏍囧噯鍐呰竟璺濅互淇濊瘉澶ф皵鎰?*/
+}
+
+/* Logo 鍥剧墖鏍峰紡宸茬Щ闄?*/
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.journal-name {
+    font-size: 1.5rem;
+    /* 鎭㈠鏍囧噯灏哄锛屼粎鏂囧瓧鏄剧ず鏃舵洿绐佸嚭 */
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* 宸茬Щ闄ゅ嚭鐗堢ぞ鍓枃鏈牱寮?*/
+
+.nav {
+    border-right: 1px solid var(--border-color);
+    height: 100%;
+}
+
+.nav-list {
+    display: flex;
+    height: 100%;
+    list-style: none;
+}
+
+.nav-list li {
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+}
+
+.nav-list li:first-child {
+    border-left: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 0 1.5rem;
+}
+
+.nav-list a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+
+/* Hero Section */
+.hero {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+}
+
+.hero-text {
+    padding: 4rem 2rem;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 0;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-color);
+    border-left: none;
+    color: var(--primary-color);
+}
+
+.hero-image {
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-image img {
+    width: 80%;
+    border: 1px solid var(--border-color);
+}
+
+/* Section Common */
+.section {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 0;
+    padding: 1.5rem 2rem;
+    /* 鎭㈠ 2rem 宸﹀唴杈硅窛锛岀‘淇濇枃瀛椾笌鍐呭鍦ㄤ竴琛?*/
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.section-title::after {
+    display: none;
+}
+
+/* Latest Issue */
+.issue-bento {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+}
+
+.issue-cover {
+    padding: 3rem;
+    border-right: 1px solid var(--border-color);
+    background: #fafafa;
+}
+
+.cover-img {
+    width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+.issue-details {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.issue-info-wrapper {
+    padding: 3rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.issue-vol {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.article-list {
+    padding: 2rem;
+    list-style: none;
+    flex-grow: 1;
+    max-height: 450px;
+    /* 璁剧疆鏈€澶ч珮搴?*/
+    overflow-y: auto;
+    /* 鍐呴儴婊氬姩 */
+}
+
+/* 鑷畾涔夋粴鍔ㄦ潯鏍峰紡锛屼繚鎸佺綉鏍奸 */
+.article-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.article-list::-webkit-scrollbar-track {
+    background: transparent;
+    border-left: 1px solid var(--border-color);
+}
+
+.article-list::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+.article-item {
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+}
+
+.article-item:first-child {
+    border-top: none;
+}
+
+.article-category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.article-title {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.issue-cta-box {
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-full-grid {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-full-grid:hover {
+    background: #333;
+}
+
+/* News Section */
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-header .section-title {
+    border-bottom: none;
+    padding-left: 2rem;
+}
+
+.btn-more {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--border-color);
+    margin-right: 2rem;
+    letter-spacing: 1px;
+}
+
+.btn-more:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.news-item {
+    padding: 3rem 2rem;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    /* 缁熶竴楂樺害锛岄槻姝㈠洜鏍囬瀛楁暟宸紓瀵艰嚧琛岄珮涓嶄竴 */
+}
+
+.news-item:nth-child(3n) {
+    border-right: none;
+}
+
+/* 鏈€鍚庝竴琛岀殑 3 涓厓绱犵Щ闄や笅杈硅窛 */
+.news-item:nth-last-child(-n+3) {
+    border-bottom: none;
+}
+
+.news-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.news-item-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.news-link-premium {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid transparent;
+    width: fit-content;
+    padding-bottom: 2px;
+}
+
+.news-link-premium:hover {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.about-content {
+    padding: 0.5rem 2rem 3rem 2rem;
+    /* 鍐嶆鍘嬬缉椤堕儴闂磋窛 */
+    border-right: none;
+}
+
+.about-content .content-block {
+    margin-top: 0;
+    /* 褰诲簳绉婚櫎澶栬竟璺?*/
+}
+
+.about-content .content-block p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Footer & Brand integration */
+.footer {
+    border-top: 1px solid var(--border-color);
+    background: var(--white);
+    padding: 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    /* 鎵╁睍涓?5 鍒?*/
+}
+
+.footer-brand {
+    padding: 3rem 2rem;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-publisher-info {
+    margin-bottom: 2rem;
+}
+
+.footer-publisher-info h4 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.footer-logo-premium {
+    height: 40px;
+    margin-bottom: 1rem;
+    filter: grayscale(1);
+    opacity: 0.8;
+}
+
+.footer-publisher-details p {
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 200px;
+}
+
+/* 宸茬Щ闄ゆ棫 Logo 鏍峰紡 */
+
+.copyright {
+    font-size: 0.65rem;
+    color: #888;
+    line-height: 1.4;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.footer-links {
+    padding: 3rem 2rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.footer-links:last-child {
+    border-right: none;
+}
+
+.footer-links h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        border: none;
+    }
+
+    .hero-grid,
+    .issue-bento,
+    .about-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero-text,
+    .issue-cover,
+    .about-content {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+        border-right: none;
+    }
+}
+
+/* ==========================================================================
+   News Page Styles (Compact Refined Edition)
+   ========================================================================== */
+
+.page-header {
+    background: #fdfdfd;
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-left: 2rem;
+}
+
+.breadcrumb a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.page-title {
+    font-size: 2.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #1a1a1a;
+    padding-left: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.news-vertical-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-list-item {
+    padding: 2.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    transition: background 0.2s;
+}
+
+.news-list-item:hover {
+    background: #f9f9f9;
+}
+
+.news-item-title-large {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.news-item-title-large a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.news-item-title-large a:hover {
+    color: var(--primary-color);
+}
+
+.news-excerpt {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.page-btn {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--border-color);
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.page-btn:hover:not(.disabled) {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.page-num {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    color: #999;
+}
+
+.page-num.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Detail Page */
+.news-article-main {
+    padding: 4rem 3rem;
+    min-height: 60vh;
+}
+
+.news-article-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-article-title {
+    font-size: 2.4rem;
+    font-family: 'Playfair Display', serif;
+    margin-top: 1rem;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.news-article-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    max-width: 900px;
+    /* 同时也限制一下文字行宽，虽然容器宽了，但为了阅读舒适度，正文最好控制在900px内 */
+}
+
+.news-article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.news-article-content h3 {
+    margin: 2rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--border-color);
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.btn-back:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .news-article-title {
+        font-size: 1.8rem;
+    }
+
+    .news-item-title-large {
+        font-size: 1.3rem;
+    }
+}
